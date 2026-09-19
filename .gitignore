@@ -1,0 +1,30 @@
+## Core .NET Build Artifacts
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+## Visual Studio Cache & Configurations
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## JetBrains Rider / IntelliJ
+.idea/
+*.sln.iml
+
+## Visual Studio Code
+.vscode/
+
+## User Secrets & Local Settings
+# Never commit your environment variables or app secrets
+**/appsettings.Development.json
+**/appsettings.local.json
+**/launchSettings.json
+
+## Crash Logs & OS files
+*.cloud
+*.crash
+Thumbs.db
+.DS_Store
