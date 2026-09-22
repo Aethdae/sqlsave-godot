@@ -4,6 +4,10 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Aetherbound.Utils.SqlSave</PackageId>
+    <Version>0.0.3</Version>
+    <Authors>Tyler Long</Authors>
+    <Company>Aetherbound Studios</Company>
   </PropertyGroup>
 
   <ItemGroup>

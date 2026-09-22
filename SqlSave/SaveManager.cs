@@ -17,18 +17,19 @@ namespace SqlSave
             using var command = Connection.CreateCommand();
             command.CommandText = """
             CREATE TABLE IF NOT EXISTS saves(
+            save_id INTEGER,
+            FOREIGN KEY (save) REFERENCES save(id)
+            );
+            CREATE TABLE IF NOT EXISTS save(
             id INTEGER AUTOINCREMENT PRIMARY KEY
-            )
+            );
             """;
             using var reader = command.ExecuteReader();
 
-            GD.Print("Trying to read..");
             if (reader.Read())
             {
-                var spell = reader.GetValue("spell");
-                return (string)spell;
+                GD.Print("hello!");
             }
-            return null;
 
         }
 
