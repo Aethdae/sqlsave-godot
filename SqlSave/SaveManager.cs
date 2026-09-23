@@ -11,17 +11,17 @@ namespace SqlSave
         public SaveManager()
         {
             string userData = OS.GetUserDataDir();
-            Connection = new SqliteConnection(userData + "/saves/Save.sav");
+            Connection = new SqliteConnection($"Data Source={userData}/saves/Save.sav");
             Connection.Open();
 
             using var command = Connection.CreateCommand();
             command.CommandText = """
+            CREATE TABLE IF NOT EXISTS save(
+            id INTEGER AUTOINCREMENT PRIMARY KEY
+            );        
             CREATE TABLE IF NOT EXISTS saves(
             save_id INTEGER,
             FOREIGN KEY (save) REFERENCES save(id)
-            );
-            CREATE TABLE IF NOT EXISTS save(
-            id INTEGER AUTOINCREMENT PRIMARY KEY
             );
             """;
             using var reader = command.ExecuteReader();
